@@ -21,7 +21,12 @@ void ofApp::update(){
 void ofApp::draw(){
 	for (int i = 0; i < circles.size(); i++) 
 	{
+		ofSetColor(255, 255, 255);
 		ofDrawCircle(100 + i * 200, 200, circles[i]);
+
+		ofSetColor(0, 0, 0);
+		std::string text = std::to_string(circles[i]);
+		ofDrawBitmapString(text, (100 + i * 200) - text.size() * 4, 200 + 4);
 	}
 }
 

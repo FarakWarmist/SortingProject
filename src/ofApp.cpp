@@ -30,7 +30,7 @@ void ofApp::draw(){
 	}
 }
 
-// Tri à Bulles
+// Tri à Bulles ////////////////////////////////////////////////////////
 void bubbleSort(std::vector<int>& arr)
 {
 	for (int i = 0; i < arr.size(); i++)
@@ -45,7 +45,7 @@ void bubbleSort(std::vector<int>& arr)
 
 }
 
-// Tri par Insertion
+// Tri par Insertion ///////////////////////////////////////////////////
 void insertionSort(std::vector<int>& arr)
 {
 	for (size_t i = 1; i < arr.size(); i++)
@@ -61,7 +61,7 @@ void insertionSort(std::vector<int>& arr)
 	}
 }
 
-// Tri Fusion
+// Tri Fusion /////////////////////////////////////////////////////////
 void merge(std::vector<int>& arr, int start, int mid, int end)
 {
 	std::vector<int> tempArr;
@@ -113,6 +113,39 @@ void mergeSort(std::vector<int>& arr)
 	mergeSort(arr, 0, arr.size() - 1);
 }
 
+// Tri Rapide /////////////////////////////////////////////////////////
+int partition(std::vector<int>& arr, int low, int high)
+{
+	int pivot = arr[high];
+	int i = low - 1;
+	for (int j = low; j < high; j++)
+	{
+		if (arr[j] < pivot)
+		{
+			i++;
+			std::swap(arr[i], arr[j]);
+		}
+	}
+
+	std::swap(arr[i + 1], arr[high]);
+	return i + 1;
+}
+
+void quickSort(std::vector<int>& arr, int low, int high)
+{
+	if (low < high)
+	{
+		int pi = partition(arr, low, high);
+		quickSort(arr, low, pi - 1);
+		quickSort(arr, pi + 1, high);
+	}
+}
+
+void quickSort(std::vector<int>& arr)
+{
+	quickSort(arr, 0, arr.size() - 1);
+}
+
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 	// Active le Tri à Bulles
@@ -131,6 +164,12 @@ void ofApp::keyPressed(int key){
 	if (key == 'm')
 	{
 		mergeSort(circles);
+	}
+
+	// Active le Tri Rapide
+	if (key == 'q')
+	{
+		quickSort(circles);
 	}
 }
 

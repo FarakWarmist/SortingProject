@@ -30,11 +30,7 @@ void ofApp::draw(){
 	}
 }
 
-<<<<<<< HEAD
 // Tri à Bulles ////////////////////////////////////////////////////////
-=======
-// Tri à Bulles
->>>>>>> origin/main
 void bubbleSort(std::vector<int>& arr)
 {
 	for (int i = 0; i < arr.size(); i++)
@@ -49,11 +45,7 @@ void bubbleSort(std::vector<int>& arr)
 
 }
 
-<<<<<<< HEAD
 // Tri par Insertion ///////////////////////////////////////////////////
-=======
-// Tri par Insertion
->>>>>>> origin/main
 void insertionSort(std::vector<int>& arr)
 {
 	for (size_t i = 1; i < arr.size(); i++)
@@ -69,11 +61,7 @@ void insertionSort(std::vector<int>& arr)
 	}
 }
 
-<<<<<<< HEAD
 // Tri Fusion /////////////////////////////////////////////////////////
-=======
-// Tri Fusion
->>>>>>> origin/main
 void merge(std::vector<int>& arr, int start, int mid, int end)
 {
 	std::vector<int> tempArr;
@@ -125,7 +113,6 @@ void mergeSort(std::vector<int>& arr)
 	mergeSort(arr, 0, arr.size() - 1);
 }
 
-<<<<<<< HEAD
 // Tri Rapide /////////////////////////////////////////////////////////
 int partition(std::vector<int>& arr, int low, int high)
 {
@@ -159,8 +146,6 @@ void quickSort(std::vector<int>& arr)
 	quickSort(arr, 0, arr.size() - 1);
 }
 
-=======
->>>>>>> origin/main
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 	// Active le Tri à Bulles
@@ -180,15 +165,12 @@ void ofApp::keyPressed(int key){
 	{
 		mergeSort(circles);
 	}
-<<<<<<< HEAD
 
 	// Active le Tri Rapide
 	if (key == 'q')
 	{
 		quickSort(circles);
 	}
-=======
->>>>>>> origin/main
 }
 
 //--------------------------------------------------------------

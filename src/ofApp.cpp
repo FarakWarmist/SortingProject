@@ -30,6 +30,17 @@ void ofApp::draw(){
 	}
 }
 
+// Regénérer de nouveaux Cercles
+void resetArray(std::vector<int>& arr)
+{
+	arr.clear();
+	for (int i = 0; i < 5; i++)
+	{
+		int n = 10 + std::rand() % 91; // n entre 10 & 100
+		arr.push_back(n);
+	}
+}
+
 // Tri à Bulles ////////////////////////////////////////////////////////
 void bubbleSort(std::vector<int>& arr)
 {
@@ -160,6 +171,11 @@ void shuffle(std::vector<int>& arr)
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+	// Reset Circles Array
+	if (key == 'r')
+	{
+		resetArray(circles);
+	}
 	// Active le Tri à Bulles
 	if (key == 'b')
 	{

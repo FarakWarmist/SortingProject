@@ -41,7 +41,8 @@ void resetArray(std::vector<int>& arr)
 	}
 }
 
-// Tri à Bulles ////////////////////////////////////////////////////////
+
+// Tri à Bulles
 void bubbleSort(std::vector<int>& arr)
 {
 	for (int i = 0; i < arr.size(); i++)
@@ -56,7 +57,8 @@ void bubbleSort(std::vector<int>& arr)
 
 }
 
-// Tri par Insertion ///////////////////////////////////////////////////
+
+// Tri par Insertion
 void insertionSort(std::vector<int>& arr)
 {
 	for (size_t i = 1; i < arr.size(); i++)
@@ -72,7 +74,8 @@ void insertionSort(std::vector<int>& arr)
 	}
 }
 
-// Tri Fusion /////////////////////////////////////////////////////////
+
+// Tri Fusion
 void merge(std::vector<int>& arr, int start, int mid, int end)
 {
 	std::vector<int> tempArr;
@@ -124,7 +127,8 @@ void mergeSort(std::vector<int>& arr)
 	mergeSort(arr, 0, arr.size() - 1);
 }
 
-// Tri Rapide /////////////////////////////////////////////////////////
+
+// Tri Rapide
 int partition(std::vector<int>& arr, int low, int high)
 {
 	int pivot = arr[high];
@@ -157,7 +161,8 @@ void quickSort(std::vector<int>& arr)
 	quickSort(arr, 0, arr.size() - 1);
 }
 
-// Algorithme de Fisher-Yates /////////////////////////////////////////
+
+// Algorithme de Fisher-Yates
 void shuffle(std::vector<int>& arr)
 {
 	srand(time(NULL));
@@ -176,6 +181,7 @@ void ofApp::keyPressed(int key){
 	{
 		resetArray(circles);
 	}
+
 	// Active le Tri à Bulles
 	if (key == 'b')
 	{
